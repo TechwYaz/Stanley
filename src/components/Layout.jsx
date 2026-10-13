@@ -93,8 +93,9 @@ export default function Layout() {
       <nav className={`mobile-nav ${navHidden ? 'hidden' : ''}`}>
         <NavLink to="/" end className={cls}><Home size={20} />Home</NavLink>
         <NavLink to="/search" className={cls}><Search size={20} />Search</NavLink>
-        <NavLink to="/profile" className={cls}><User size={20} />Profile</NavLink>
         <a href="#create" onClick={(e) => { e.preventDefault(); setCreating(true) }}><PlusSquare size={20} />Post</a>
+        <NavLink to="/profile" className={cls}><User size={20} />Profile</NavLink>
+        
         <NavLink to="/settings" className={cls}><Settings size={20} />Settings</NavLink>
       </nav>
 
