@@ -30,8 +30,8 @@ export default function Login() {
 
   return (
     <AuthLayout
-      heading={<>Welcome<br />back.</>}
-      copy="Pick up the conversation exactly where you left it."
+      heading={<>Catch up.<br />Share more.<br />Stay close.</>}
+      copy="See what your people are sharing, discover new posts, and stay connected to the moments that matter."
       title="Log in to Stanley"
       subtitle="Good to see you again."
     >

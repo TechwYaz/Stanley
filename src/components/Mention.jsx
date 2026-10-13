@@ -107,15 +107,19 @@ export function MentionInput({ value, onChange, as: Tag = 'input', up = false, e
 
 export function MentionText({ text, as: Tag = 'p', ...props }) {
   const navigate = useNavigate()
-  const parts = text.split(/(@[a-z0-9_]{3,30})/g)
+  const parts = typeof text === 'string' ? text.split(/(@[a-z0-9_]{3,30})/g) : []
 
   const open = async (username) => {
     try {
       const { data } = await api.get('/users/search', { params: { q: username } })
       const u = data.data.users.find((x) => x.username === username)
-      if (u) navigate(`/users/${u._id}`)
+      if (u) {
+        navigate(`/users/${u._id}`)
+      } else {
+        navigate('/not-found')
+      }
     } catch {
-      
+      navigate('/not-found')
     }
   }
 

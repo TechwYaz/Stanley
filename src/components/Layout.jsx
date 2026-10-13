@@ -81,6 +81,11 @@ export default function Layout() {
 
       <main id="mainContent">
         <Outlet context={{ openCreate: () => setCreating(true) }} />
+        <footer className="app-footer">
+          <span>© 2026 Stanley</span>
+          <span aria-hidden="true">·</span>
+          <span>Made by Yazan Sofian</span>
+        </footer>
       </main>
 
       <Rightbar />

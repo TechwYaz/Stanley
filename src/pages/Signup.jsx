@@ -44,8 +44,8 @@ export default function Signup() {
 
   return (
     <AuthLayout
-      heading={<>Your people.<br />Your feed.<br />Your Stanley.</>}
-      copy="A simple social space for conversations, updates and the little things worth sharing."
+      heading={<>Share your world.<br />Find your people.<br />Stay connected.</>}
+      copy="Post what matters, follow the people you care about, and discover the moments happening now."
       title="Create your account"
       subtitle="Join Stanley in less than a minute."
     >

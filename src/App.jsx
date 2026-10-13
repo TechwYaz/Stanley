@@ -1,11 +1,13 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Toast } from '@heroui/react'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import { AuthProvider } from './context/AuthContext'
 import { ThemeProvider } from './context/ThemeContext'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import NotFound from './pages/NotFound'
 import Notifications from './pages/Notifications'
 import PostDetails from './pages/PostDetails'
 import Profile from './pages/Profile'
@@ -33,11 +35,14 @@ function App() {
                 <Route path="/search" element={<Search />} />
                 <Route path="/notifications" element={<Notifications />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/not-found" element={<NotFound />} />
               </Route>
-              <Route path="*" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<Navigate to="/not-found" replace />} />
             </Routes>
           </BrowserRouter>
         </AuthProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
+        
       </QueryClientProvider>
     </ThemeProvider>
   )

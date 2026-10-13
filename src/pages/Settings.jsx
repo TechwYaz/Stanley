@@ -1,6 +1,7 @@
 import { toast } from '@heroui/react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import api, { errMsg } from '../api'
 import Field from '../components/Field'
 import Modal from '../components/Modal'
@@ -50,8 +51,15 @@ function PasswordModal({ onClose }) {
 }
 
 export default function Settings() {
-  const { user } = useAuth()
+  const { user, logout } = useAuth()
+  const navigate = useNavigate()
   const [open, setOpen] = useState(false)
+
+  const doLogout = () => {
+    logout()
+    toast.success('Logged out')
+    navigate('/login')
+  }
 
   return (
     <div>
@@ -73,6 +81,9 @@ export default function Settings() {
           <div className="setting-control">
             <button className="btn btn-secondary btn-sm" onClick={() => setOpen(true)}>Change password</button>
           </div>
+        </div>
+        <div className="setting-row danger-zone setting-logout">
+          <button className="btn btn-danger btn-sm" onClick={doLogout}>Log out</button>
         </div>
       </section>
       {open && <PasswordModal onClose={() => setOpen(false)} />}

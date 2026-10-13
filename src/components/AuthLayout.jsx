@@ -11,7 +11,7 @@ export default function AuthLayout({ heading, copy, title, subtitle, children })
           <h1>{heading}</h1>
           <p>{copy}</p>
         </div>
-        <div style={{ fontSize: 13, color: 'rgba(255,255,255,.65)' }}>Built with the Route Posts API</div>
+        <p className="auth-credit auth-visual-credit">Made by Yazan Sofian · Powered by Route Posts API</p>
       </div>
       <div className="auth-card-wrap">
         <ThemeToggle className="auth-theme-toggle" />
@@ -20,6 +20,7 @@ export default function AuthLayout({ heading, copy, title, subtitle, children })
           <h2>{title}</h2>
           <p className="auth-sub">{subtitle}</p>
           {children}
+          <p className="auth-credit auth-mobile-credit">Made by Yazan Sofian · Powered by Route Posts API</p>
         </div>
       </div>
     </div>
